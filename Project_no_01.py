@@ -16,11 +16,10 @@ def get_employee_info(emp_id):
     else:
         return "Employee not found"
 
-# Test the function with an example EmpID
-emp_id = int(input("Enter Employee ID: "))  # Asking user for EmpID input
+emp_id = int(input("Enter Employee ID: "))  # Asking user for Employee_ID (input)
 employee_info = get_employee_info(emp_id)
 
-# Display employee information or a "not found" message
+# Displaying  employee information or a "not found" message
 print(employee_info)
 # *********id of employee Started from 1001 to 4000 ****************
 
