@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .receipt-container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        h3 {
+            text-align: right;
+            margin-top: 20px;
+            color: #444;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <h1>🧾 Purchase Receipt</h1>
+        <ul>
+            {% for item in receipt %}
+                <li><strong>{{ item['title'] }}</strong> - Quantity: {{ item['quantity'] }} | Total: Rs. {{ item['total'] }}</li>
+            {% endfor %}
+        </ul>
+        <h3>Total Amount: Rs. {{ total }}</h3>
+        <a href="/" class="back-link">⬅ Back to Shop</a>
+    </div>
+</body>
+</html>
